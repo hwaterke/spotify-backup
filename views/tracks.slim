@@ -1,0 +1,11 @@
+- if @tracks.empty?
+  p No tracks found
+- else
+  p = "#{@tracks.size} tracks"
+  ul.list-group
+    - @tracks.each do |item|
+      li.list-group-item
+        img src=="#{item['track']['album']['images'].last['url']}"
+        div
+          h4 = item['track']['name']
+          div = "#{item['track']['artists'].first['name']}"
